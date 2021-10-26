@@ -43,6 +43,16 @@ This will generate a file named `output/data.json`. The file contains the specif
 pytest
 ```
 
+## Expected Input File Format
+
+```
+   "base_url": string,
+   "wools": [
+      { "brand": string, "description": string },
+      ...
+   ]
+```
+
 ## Future Things to Consider
 
 - [ ] execute https calls in parallel
@@ -50,3 +60,4 @@ pytest
 - [ ] exhaustive unit tests
 - [ ] type validation
 - [ ] input sanitation
+- [ ] pass input file as command line argument
