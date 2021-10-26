@@ -1,3 +1,4 @@
+from unittest.mock import call
 import requests
 import json
 import os
@@ -9,12 +10,12 @@ from bs4 import BeautifulSoup
 from src.wollplatz import extract_wool_data
 
 
-def main():
+def main(extract_wool_data_fn: callable):
     input_data = {}
     with open("wool-input-data.json", "r") as input:
         input_data = json.load(input)
 
-    wool_data = {generate_wool_id(wool): fetch_wool_data(wool, input_data["base_url"], extract_wool_data)
+    wool_data = {generate_wool_id(wool): fetch_wool_data(wool, input_data["base_url"], extract_wool_data_fn)
                  for wool in input_data["wools"]}
 
     filename = "output/data.json"
@@ -52,4 +53,4 @@ def fetch_wool_page(wool, base_url: str) -> Response:
 
 
 if __name__ == "__main__":
-    main()
+    main(extract_wool_data)
