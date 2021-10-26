@@ -1,4 +1,4 @@
-# Happy Granny
+# Happy Granny 👵
 
 Happy Granny is a platform to compare wool prices from multiple vendors 🧶
 
@@ -25,3 +25,28 @@ Happy Granny is a platform to compare wool prices from multiple vendors 🧶
    ```sh
    pip3 install -r requirements.txt
    ```
+
+## Run Application
+
+Make sure you activated your virtual environment via `source venv/bin/activate`.
+After that simply run:
+
+```sh
+python3 src/main.py
+```
+
+This will generate a file named `output/data.json`. The file contains the specified data about the desired wool.
+
+## Run Unit Tests
+
+```sh
+pytest
+```
+
+## Future Things to Consider
+
+- [ ] execute https calls in parallel
+- [ ] more robust error handling
+- [ ] exhaustive unit tests
+- [ ] type validation
+- [ ] input sanitation
