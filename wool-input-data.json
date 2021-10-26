@@ -1,0 +1,9 @@
+{
+  "wools": [
+    { "brand": "dmc", "description": "Natura XL" },
+    { "brand": "Drops", "description": "Safran" },
+    { "brand": "Drops", "description": "Baby Merino XL" },
+    { "brand": "Hahn", "description": "Alpacca Speciale" },
+    { "brand": "Stylecraft", "description": "Special double knit" }
+  ]
+}
