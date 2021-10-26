@@ -37,7 +37,7 @@ def test_extract_stock_status_available():
 
 
 def test_extract_stock_status_unavailable():
-    with open("tests/resources/stock-status-unavailable.html", "r") as html:
+    with open(f"{constants.test_dir}/resources/stock-status-unavailable.html", "r") as html:
         dom = BeautifulSoup(html, constants.soup_parser)
         status = extract_stock_status(dom)
         assert status == "not available"
