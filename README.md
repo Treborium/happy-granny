@@ -43,7 +43,9 @@ This will generate a file named `output/data.json`. The file contains the specif
 pytest
 ```
 
-## Expected Input File Format
+## Development Details
+
+### Expected Input File Format
 
 ```
    "base_url": string,
@@ -53,6 +55,18 @@ pytest
    ]
 ```
 
+### Add New Page
+
+To get the wool data from another page you need to provide a new `extractor` function. The `extractor` function should be a callable with the following signature:
+
+```python
+ # returns desired values in a dict
+def extractor(dom: BeautifulSoup) -> dict:
+   # Implementation
+```
+
+To use the new `extractor` function it's necessary to pass the function pointer to the `main` function (see _Future Things to Consider_ section for possible improvement).
+
 ## Future Things to Consider
 
 - [ ] execute https calls in parallel
@@ -61,3 +75,4 @@ pytest
 - [ ] type validation
 - [ ] input sanitation
 - [ ] pass input file as command line argument
+- [ ] pass extractor as command line argument
