@@ -1,4 +1,5 @@
 {
+  "base_url": "https://www.wollplatz.de/",
   "wools": [
     { "brand": "dmc", "description": "Natura XL" },
     { "brand": "Drops", "description": "Safran" },

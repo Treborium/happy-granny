@@ -10,12 +10,12 @@ from src.utils import flatten
 
 
 def main():
-    wools = [ ]
+    input_data = { }
     with open("wool-input-data.json", "r") as input:
-        wools = json.load(input)["wools"]
+        input_data = json.load(input)
 
-    wool_data = {generate_wool_id(wool): fetch_wool_data(wool)
-                 for wool in wools}
+    wool_data = {generate_wool_id(wool): fetch_wool_data(wool, input_data["base_url"])
+                 for wool in input_data["wools"]}
 
     filename = "output/data.json"
     os.makedirs(os.path.dirname(filename), exist_ok=True)
@@ -29,10 +29,10 @@ def generate_wool_id(wool) -> str:
 
 
 # Possible improvement: Calls can be executed in parallel
-def fetch_wool_data(wool) -> Union[dict, None]:
+def fetch_wool_data(wool, base_url: str) -> Union[dict, None]:
     wool_id = generate_wool_id(wool)
 
-    page = fetch_wool_page(wool)
+    page = fetch_wool_page(wool, base_url)
     if page.status_code == 200:
         dom = BeautifulSoup(page.content, "html.parser")
         wool_data = extract_wool_data(dom)
@@ -43,11 +43,11 @@ def fetch_wool_data(wool) -> Union[dict, None]:
         return None
 
 
-def fetch_wool_page(wool) -> Response:
+def fetch_wool_page(wool, base_url: str) -> Response:
     brand = wool['brand']
     formatted_description = wool['description'].lower().replace(' ', '-')
     subpath = f"wolle/{brand}/{brand}-{formatted_description}"
-    url: str = f"https://www.wollplatz.de/{subpath}"
+    url: str = base_url + subpath
     return requests.get(url)
 
 
