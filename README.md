@@ -28,14 +28,14 @@ Happy Granny is a platform to compare wool prices from multiple vendors 🧶
 
 ## Run Application
 
-Make sure you activated your virtual environment via `source venv/bin/activate`.
+Make sure you've activated your virtual environment via `source venv/bin/activate`.
 After that simply run:
 
 ```sh
 python3 src/main.py
 ```
 
-This will generate a file named `output/data.json`. The file contains the specified data about the desired wool.
+This will generate a file named `output/data.json`. The file contains the specified data of the desired wool.
 
 ## Run Unit Tests
 
@@ -57,7 +57,7 @@ pytest
 
 ### Add New Page
 
-To get the wool data from another page you need to provide a new `extractor` function. The `extractor` function should be a callable with the following signature:
+To get the wool data from another webpage you need to provide a new `extractor` function. The `extractor` function should be a callable with the following signature:
 
 ```python
  # returns desired values in a dict
@@ -73,6 +73,6 @@ To use the new `extractor` function it's necessary to pass the function pointer 
 - [ ] more robust error handling
 - [ ] exhaustive unit tests
 - [ ] type validation
-- [ ] input sanitation
+- [ ] input sanitization
 - [ ] pass input file as command line argument
 - [ ] pass extractor as command line argument
