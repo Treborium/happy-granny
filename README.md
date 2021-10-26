@@ -23,7 +23,7 @@ Happy Granny is a platform to compare wool prices from multiple vendors 🧶
 3. Install dependencies
 
    ```sh
-   pip3 install -r requirements.txt
+   pip3 install -e .
    ```
 
 ## Run Application
