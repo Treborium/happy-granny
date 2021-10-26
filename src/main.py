@@ -22,6 +22,7 @@ def main(extract_wool_data_fn: callable):
     os.makedirs(os.path.dirname(filename), exist_ok=True)
     with open(filename, "w+") as outfile:
         json.dump(wool_data, outfile)
+        print(f"Success ✅: Wrote wool data to '{filename}'")
 
 
 def generate_wool_id(wool) -> str:
