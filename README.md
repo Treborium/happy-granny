@@ -79,3 +79,8 @@ To use the new `extractor` function it's necessary to pass the function pointer 
 - [ ] pass input file as command line argument
 - [ ] pass `extractor` as command line argument
 - [ ] use classes instead of `extractor` function
+
+## Notes for Reviewer
+
+- Couldn't find shipping duration on website. That's why I've only checked if it's available
+- Two out of the five wools apparently don't exist on the website.
