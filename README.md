@@ -48,11 +48,13 @@ pytest
 ### Expected Input File Format
 
 ```
+{
    "base_url": string,
    "wools": [
       { "brand": string, "description": string },
       ...
    ]
+}
 ```
 
 ### Add New Page
@@ -60,7 +62,7 @@ pytest
 To get the wool data from another webpage you need to provide a new `extractor` function. The `extractor` function should be a callable with the following signature:
 
 ```python
- # returns desired values in a dict
+# returns desired values in a dict
 def extractor(dom: BeautifulSoup) -> dict:
    # Implementation
 ```
@@ -75,4 +77,5 @@ To use the new `extractor` function it's necessary to pass the function pointer 
 - [ ] type validation
 - [ ] input sanitization
 - [ ] pass input file as command line argument
-- [ ] pass extractor as command line argument
+- [ ] pass `extractor` as command line argument
+- [ ] use classes instead of `extractor` function
